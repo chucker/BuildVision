@@ -39,7 +39,7 @@
     <PackageReference Include="Community.VisualStudio.Toolkit.15" Version="15.0.339" />
     <PackageReference Include="Microsoft.Build" Version="16.0.461" />
     <PackageReference Include="Microsoft.Build.Engine" Version="16.0.461" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="17.1.0" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.0.461" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -47,7 +47,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" />
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.2.32505.173" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5232">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
