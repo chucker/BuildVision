@@ -116,6 +116,7 @@ namespace BuildVision.Core
             Assumes.Present(_solutionProvider);
 
             Community.VisualStudio.Toolkit.VS.Events.SolutionEvents.OnBeforeOpenSolution += SolutionEvents_Opened;
+            Community.VisualStudio.Toolkit.VS.Events.SolutionEvents.OnAfterOpenSolution += sln => SolutionEvents_Opened();
             Community.VisualStudio.Toolkit.VS.Events.SolutionEvents.OnBeforeCloseSolution += SolutionEvents_AfterClosing;
 
             if (_dte.Solution?.IsOpen == true)
