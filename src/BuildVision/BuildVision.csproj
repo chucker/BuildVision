@@ -1,170 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9925A635-1827-4BB4-9C31-FE0FC87A6265}</ProjectGuid>
-    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BuildVision</RootNamespace>
-    <AssemblyName>BuildVision</AssemblyName>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
-    <TargetFrameworkProfile />
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>14.0</OldToolsVersion>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFramework>net472</TargetFramework>
+    <Copyright>© 2017 BuildVision</Copyright>
+    <UseWPF>true</UseWPF>
+    <UseCodebase>true</UseCodebase>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Package.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DeployExtension>False</DeployExtension>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="PresentationFramework.Aero" />
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Transactions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="UIAutomationTypes" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="System.Xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Commands\ShowToolWindowCommand.cs" />
-    <Compile Include="Constants\EnvDTECodeModelLanguageConstants2.cs" />
-    <Compile Include="Extensions\BuildActionsExtensions.cs" />
-    <Compile Include="Extensions\BuildStateExtensions.cs" />
-    <Compile Include="Extensions\IServiceProviderExtensions.cs" />
-    <Compile Include="Properties\GlobalSuppressions.cs" />
-    <Compile Include="Services\BuildInformationProvider.cs" />
-    <Compile Include="Services\BuildLoggerProvider.cs" />
-    <Compile Include="Services\ErrorNavigationService.cs" />
-    <Compile Include="Interfaces\IWindowStateService.cs" />
-    <Compile Include="Services\SolutionProvider.cs" />
-    <Compile Include="Helpers\ProjectIdentifierGenerator.cs" />
-    <Compile Include="Core\BuildVisionPackage.cs" />
-    <Compile Include="Core\ServiceProviderPackage.cs" />
-    <Compile Include="Core\Services.cs" />
-    <Compile Include="Core\SolutionBuildEvents.cs" />
-    <Compile Include="Services\StatusBarNotificationService.cs" />
-    <Compile Include="Helpers\BuildEventContextExtensions.cs" />
-    <Compile Include="Helpers\BuildMessageEventArgsExtensions.cs" />
-    <Compile Include="Constants\EnvDTEProjectKinds.cs" />
-    <Compile Include="Helpers\SolutionProjectsExtensions.cs" />
-    <Compile Include="Helpers\ProjectExtensions.cs" />
-    <Compile Include="Helpers\ProjectItemExtensions.cs" />
-    <Compile Include="Helpers\PropertiesExtensions.cs" />
-    <Compile Include="Helpers\StateConverterHelper.cs" />
-    <Compile Include="Helpers\UIHierarchyExtensions.cs" />
-    <Compile Include="Helpers\VsCfgExtensions.cs" />
-    <Compile Include="Helpers\VsHierarchyExtensions.cs" />
-    <Compile Include="Services\BuildService.cs" />
-    <Compile Include="Services\BuildOutputLogger.cs" />
-    <Compile Include="Services\TaskBarInfoService.cs" />
-    <Compile Include="Services\WindowStateService.cs" />
-    <Compile Include="Views\Settings\BuildMessagesSettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Settings\GeneralSettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Settings\GridSettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Services\PackageSettingsProvider.cs" />
-    <Compile Include="Views\Settings\ProjectItemSettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Settings\SettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Views\Settings\WindowSettingsDialogPage.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Core\BuildVisionPane.cs" />
-    <Compile Include="Constants\PackageGuids.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Constants\PackageIds.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="VSPackage.resx">
-      <MergeWithCTO>true</MergeWithCTO>
-      <ManifestResourceName>VSPackage</ManifestResourceName>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="source.extension.vsixmanifest">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Key.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <VSCTCompile Include="BuildVision.vsct">
-      <ResourceName>Menus.ctmenu</ResourceName>
-      <SubType>Designer</SubType>
-    </VSCTCompile>
-  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images_24bit.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="LICENSE.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -184,134 +29,36 @@
     <None Include="Resources\Images_32bit.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
+    <ProjectReference Include="..\BuildVision.Common\BuildVision.Common.csproj" />
+    <ProjectReference Include="..\BuildVision.Contracts\BuildVision.Contracts.csproj" />
+    <ProjectReference Include="..\BuildVision.Exports\BuildVision.Exports.csproj" />
+    <ProjectReference Include="..\BuildVision.UI\BuildVision.UI.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BuildVision.Common\BuildVision.Common.csproj">
-      <Project>{848412d1-95bf-4e56-a9ef-2926af5c6d67}</Project>
-      <Name>BuildVision.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BuildVision.Contracts\BuildVision.Contracts.csproj">
-      <Project>{13d64a57-5db3-4cc7-ac2b-9034e767d754}</Project>
-      <Name>BuildVision.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BuildVision.Exports\BuildVision.Exports.csproj">
-      <Project>{F16E6593-DDF9-4E9E-A2F8-56A3C43A643E}</Project>
-      <Name>BuildVision.Exports</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BuildVision.UI\BuildVision.UI.csproj">
-      <Project>{84e8ba65-9a4b-4c50-a115-6ef3208e4058}</Project>
-      <Name>BuildVision.UI</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="AppInsights.WindowsDesktop">
-      <Version>2.10.55</Version>
-    </PackageReference>
-    <PackageReference Include="Community.VisualStudio.Toolkit.15">
-      <Version>15.0.339</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build">
-      <Version>16.0.461</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Engine">
-      <Version>16.0.461</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Framework">
-      <Version>16.0.461</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Build.Utilities.Core">
-      <Version>16.0.461</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
-      <Version>3.0.0</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="AppInsights.WindowsDesktop" Version="2.10.55" />
+    <PackageReference Include="Community.VisualStudio.Toolkit.15" Version="15.0.339" />
+    <PackageReference Include="Microsoft.Build" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Engine" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.0.461" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
-      <Version>6.0.0</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.SDK">
-      <Version>16.0.206</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.VSSDK.BuildTools">
-      <Version>17.0.5232</Version>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.206" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5232">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Serilog">
-      <Version>2.9.0</Version>
-    </PackageReference>
-    <PackageReference Include="Serilog.Enrichers.Process">
-      <Version>2.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Serilog.Enrichers.Thread">
-      <Version>3.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Serilog.Sinks.File">
-      <Version>3.2.0</Version>
-    </PackageReference>
-    <PackageReference Include="SerilogAnalyzer">
-      <Version>0.15.0</Version>
-    </PackageReference>
-    <PackageReference Include="SerilogTraceListener">
-      <Version>3.2.0</Version>
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="3.2.0" />
+    <PackageReference Include="SerilogAnalyzer" Version="0.15.0" />
+    <PackageReference Include="SerilogTraceListener" Version="3.2.0" />
+    <PackageReference Include="VSIX-SdkProjectAdapter" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <PropertyGroup>
-    <UseCodebase>true</UseCodebase>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Resources\Package.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Marketplace|AnyCPU'">
-    <OutputPath>bin\Marketplace\</OutputPath>
-    <DefineConstants>TRACE;CODE_ANALYSIS;CODE_ANALYSIS;MARKETPLACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VsixGallery|AnyCPU'">
-    <OutputPath>bin\VsixGallery\</OutputPath>
-    <DefineConstants>CODE_ANALYSIS;TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\VSSDK\Microsoft.VsSDK.targets" Condition="false" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
