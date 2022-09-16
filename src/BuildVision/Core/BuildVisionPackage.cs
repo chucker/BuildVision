@@ -79,12 +79,12 @@ namespace BuildVision.Core
 
         private string GetEdition()
         {
-            try
+            if (GetService(typeof(DTE)) is DTE2 dte)
             {
-                _dte = GetService(typeof(DTE)) as DTE2;
-                return _dte.Edition;
+                _dte = dte;
+                return dte.Edition;
             }
-            catch (Exception ex)
+            else
             {
                 return "";
             }
